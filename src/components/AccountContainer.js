@@ -11,7 +11,7 @@ function AccountContainer() {
 
 
  useEffect(() => {
-    fetch("http://localhost:8001/transactions")
+    fetch("https://api.npoint.io/ce648b69fe134bd3de06/transactions/")
       .then(res => res.json())
       .then(data => {
         setAccountData(data);
@@ -22,7 +22,7 @@ function AccountContainer() {
   }, [accountUpdate])
 
   async function searchFunction(searchTerms){
-    fetch("http://localhost:8001/transactions")
+    fetch("https://api.npoint.io/ce648b69fe134bd3de06/transactions/")
       .then(res => res.json())
       .then(data => {
         //let newData = [];
@@ -41,7 +41,7 @@ function AccountContainer() {
 
   // handle addition of data 
   async function fetchAddData(submitted){
-    fetch("http://localhost:8001/transactions",
+    fetch("https://api.npoint.io/ce648b69fe134bd3de06/transactions/",
       {
         method: "POST",
         headers: {
