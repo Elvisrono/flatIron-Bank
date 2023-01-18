@@ -1,71 +1,113 @@
-# Getting Started with Create React App
+# The Bank Of Flariton
+For this project, you’ll be building out a React application that displays a
+list of your recent bank transactions, among other features.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Development requirements
+- Visual studio code
+- Live server  extension
+- npm
+- json-sever
 
-## Available Scripts
+To get the code,
+```bash
+ click on this link: https://github.com/kericho/code-challenge-Bank-of-flatiron.git
+ ```
+- fork and git clone the code to you local machine.
+- Navigate to this folder by running this command:
+```bash
+ cd code-challenge-Bank-of-flatiron/
+ ```
+- open the code using this command, 
+```bash
+   code .
+```
+- Below at the bottom of your vs code click on the Go live to display the questions on the browser.
 
-In the project directory, you can run:
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+After cloning the project:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Run `npm install` in your terminal.
+2. Run `npm start`in your terminal.
+2. Run `npm run server`. This will run your backend on port `8001`.
+3. In a new terminal, run `npm start`. This will run the app on port `8000`.
 
-### `npm test`
+Make sure to open
+[http://localhost:8001/transactions](http://localhost:8001/transactions) in the
+browser to verify that your backend is working before you proceed!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Endpoints
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The base URL for the backend is: `http://localhost:8001`
+The base URL for the frontend is: `http://localhost:8080`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As a user, I should be able to:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- See a table of the transactions.
+- Fill out and submit the form to add a new transaction. This should add the new
+  transaction to the table **as well as post the new transaction to the backend
+  API for persistence**.
+- Filter transactions by typing into the search bar. Only transactions with a
+  description matching the search term should be shown in the transactions
+  table.
 
-### `npm run eject`
+### Core Deliverables
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Example Response:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```json
+[
+  {
+    "id": 1,
+    "date": "2019-12-01",
+    "description": "Paycheck from Bob's Burgers",
+    "category": "Income",
+    "amount": 1000
+  },
+  {
+    "id": 2,
+    "date": "2019-12-01",
+    "description": "South by Southwest Quinoa Bowl at Fresh & Co",
+    "category": "Food",
+    "amount": -10.55
+  }
+]
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### POST `/transactions`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Required Headers:
 
-## Learn More
+```js
+{
+  "Content-Type": "application/json"
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Request Object:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```json
+{
+  "date": "string",
+  "description": "string",
+  "category": "string",
+  "amount": number
+}
+```
 
-### Code Splitting
+Example Response:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```json
+{
+  "id": 1,
+  "date": "2019-12-01",
+  "description": "Paycheck from Bob's Burgers",
+  "category": "Income",
+  "amount": 1000
+}
+```
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# flatIron-Bank
+## Author
+Elvis Rono
