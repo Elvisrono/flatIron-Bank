@@ -10,12 +10,12 @@ list of your recent bank transactions, among other features.
 
 To get the code,
 ```bash
- click on this link: https://github.com/kericho/code-challenge-Bank-of-flatiron.git
+ click on this link: https://github.com/kericho/flatIron-Bank.git
  ```
 - fork and git clone the code to you local machine.
 - Navigate to this folder by running this command:
 ```bash
- cd code-challenge-Bank-of-flatiron/
+ cd flatIron-Bank/
  ```
 - open the code using this command, 
 ```bash
